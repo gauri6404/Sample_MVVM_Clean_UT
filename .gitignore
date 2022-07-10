@@ -1,0 +1,31 @@
+# Add any directories, files, or patterns you don't want to be tracked by version control
+## Build generated
+build/
+DerivedData/
+xcuserdata/
+
+## Obj-C/Swift specific
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# CocoaPods
+Pods/
+*.lock
+*.xml
+
+## Build generated
+build/
+DerivedData/
+
+## Various settings
+*.pbxuser
+xcuserdata/
+
+*.xcuserstate
+.DS_Store
+
+
+xcuserdata/
+*.xcworkspace
+*.log
