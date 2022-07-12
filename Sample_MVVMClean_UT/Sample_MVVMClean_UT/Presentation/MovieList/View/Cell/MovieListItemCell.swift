@@ -21,7 +21,6 @@ final class MoviesListItemCell: UITableViewCell {
         titleLabel.text = viewModel.title
         dateLabel.text = viewModel.releaseDate
         overviewLabel.text = viewModel.overview
-//        updatePosterImage(width: Int(posterImageView.imageSizeAfterAspectFit.scaledSize.width))
         updatePosterImage(width: Int(posterImageView.frame.width))
     }
 

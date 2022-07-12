@@ -1,10 +1,3 @@
-//
-//  UserDefaultsMoviesQueriesStorage.swift
-//  ExampleMVVM
-//
-//  Created by Oleh on 03.10.18.
-//
-
 import Foundation
 
 final class UserDefaultsMoviesQueriesStorage {
