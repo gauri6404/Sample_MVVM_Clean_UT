@@ -4,7 +4,6 @@ final class MoviesListViewController: UIViewController, StoryboardInstantiable, 
     
     @IBOutlet private var contentView: UIView!
     @IBOutlet private var moviesListContainer: UIView!
-    @IBOutlet private(set) var suggestionsListContainer: UIView!
     @IBOutlet private var searchBarContainer: UIView!
     @IBOutlet private var emptyDataLabel: UILabel!
     
@@ -68,7 +67,6 @@ final class MoviesListViewController: UIViewController, StoryboardInstantiable, 
     private func updateLoading(_ loading: MoviesListViewModelLoading?) {
         emptyDataLabel.isHidden = true
         moviesListContainer.isHidden = true
-        suggestionsListContainer.isHidden = true
         LoadingView.hide()
 
         switch loading {
