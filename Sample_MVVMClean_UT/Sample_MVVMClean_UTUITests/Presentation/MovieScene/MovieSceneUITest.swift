@@ -1,10 +1,3 @@
-//
-//  MoviesSceneUITests.swift
-//  MoviesSceneUITests
-//
-//  Created by Oleh Kudinov on 05.08.19.
-//
-
 import XCTest
 
 class MoviesSceneUITests: XCTestCase {
@@ -15,9 +8,15 @@ class MoviesSceneUITests: XCTestCase {
         XCUIApplication().launch()
     }
 
-    func testOpenMovieDetails_whenSearchBatmanAndTapOnFirstResultRow_thenMovieDetailsViewOpensWithTitleBatman() {
-        
+    
+    func testScreenUI() {
         let app = XCUIApplication()
+        
+        // Search field exist
+        XCTAssertTrue(app.searchFields[AccessibilityIdentifier.searchField].exists)
+        
+        // Title exist
+        XCTAssertTrue(app.staticTexts["Movies"].exists)
         
         // Search for Batman
         let searchText = "Batman Begins"
@@ -29,7 +28,7 @@ class MoviesSceneUITests: XCTestCase {
         app.searchFields[AccessibilityIdentifier.searchField].typeText(searchText)
         app.buttons["search"].tap()
         
-        // Tap on first result row
-        app.tables.cells.staticTexts[searchText].tap()
+        // Table view exist
+        XCTAssertTrue(app.tables[AccessibilityIdentifier.tableView].waitForExistence(timeout: 5))
     }
 }

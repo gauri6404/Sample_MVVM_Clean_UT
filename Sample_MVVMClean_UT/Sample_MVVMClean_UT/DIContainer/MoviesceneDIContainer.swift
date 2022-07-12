@@ -1,12 +1,4 @@
-//
-//  MoviesSceneDIContainer.swift
-//  ExampleMVVM
-//
-//  Created by Oleh Kudinov on 03.03.19.
-//
-
 import UIKit
-import SwiftUI
 
 final class MoviesSceneDIContainer {
     
@@ -16,10 +8,7 @@ final class MoviesSceneDIContainer {
     }
     
     private let dependencies: Dependencies
-    
-    // MARK: - Persistent Storage
-    lazy var moviesQueriesStorage: MoviesQueriesStorage = UserDefaultsMoviesQueriesStorage(maxStorageLimit: 10)
-    
+        
     init(dependencies: Dependencies) {
         self.dependencies = dependencies
     }
@@ -28,26 +17,14 @@ final class MoviesSceneDIContainer {
     func makeMoviesRepository() -> MoviesRepository {
         return DefaultMoviesRepository(dataTransferService: dependencies.apiDataTransferService)
     }
-    func makeMoviesQueriesRepository() -> MoviesQueriesRepository {
-        return DefaultMoviesQueriesRepository(dataTransferService: dependencies.apiDataTransferService,
-                                              moviesQueriesPersistentStorage: moviesQueriesStorage)
-    }
+
     func makePosterImagesRepository() -> PosterImagesRepository {
         return DefaultPosterImagesRepository(dataTransferService: dependencies.imageDataTransferService)
     }
     
     // MARK: - Use Cases
     func makeSearchMoviesUseCase() -> SearchMoviesUseCase {
-        return DefaultSearchMoviesUseCase(moviesRepository: makeMoviesRepository(),
-                                          moviesQueriesRepository: makeMoviesQueriesRepository())
-    }
-    
-    func makeFetchRecentMovieQueriesUseCase(requestValue: FetchRecentMovieQueriesUseCase.RequestValue,
-                                            completion: @escaping (FetchRecentMovieQueriesUseCase.ResultValue) -> Void) -> UseCase {
-        return FetchRecentMovieQueriesUseCase(requestValue: requestValue,
-                                              completion: completion,
-                                              moviesQueriesRepository: makeMoviesQueriesRepository()
-        )
+        return DefaultSearchMoviesUseCase(moviesRepository: makeMoviesRepository())
     }
     
     // MARK: - Flow Coordinators

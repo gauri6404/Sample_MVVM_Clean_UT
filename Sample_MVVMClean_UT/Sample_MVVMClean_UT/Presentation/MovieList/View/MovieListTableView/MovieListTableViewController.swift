@@ -34,6 +34,7 @@ final class MoviesListTableViewController: UITableViewController {
     private func setupViews() {
         tableView.estimatedRowHeight = MoviesListItemCell.height
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.accessibilityIdentifier = AccessibilityIdentifier.tableView
     }
 }
 

@@ -1,16 +1,11 @@
 import Foundation
 
-
 final class DefaultSearchMoviesUseCase: SearchMoviesUseCase {
 
     private let moviesRepository: MoviesRepository
-    private let moviesQueriesRepository: MoviesQueriesRepository
 
-    init(moviesRepository: MoviesRepository,
-         moviesQueriesRepository: MoviesQueriesRepository) {
-
+    init(moviesRepository: MoviesRepository) {
         self.moviesRepository = moviesRepository
-        self.moviesQueriesRepository = moviesQueriesRepository
     }
 
     func execute(requestValue: SearchMoviesUseCaseRequestValue,
@@ -19,11 +14,6 @@ final class DefaultSearchMoviesUseCase: SearchMoviesUseCase {
         return moviesRepository.fetchMoviesList(query: requestValue.query,
                                                 page: requestValue.page,
                                                 completion: { result in
-
-            if case .success = result {
-                self.moviesQueriesRepository.saveRecentQuery(query: requestValue.query) { _ in }
-            }
-
             completion(result)
         })
     }

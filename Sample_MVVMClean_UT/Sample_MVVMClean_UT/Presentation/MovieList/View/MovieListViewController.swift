@@ -27,7 +27,6 @@ final class MoviesListViewController: UIViewController, StoryboardInstantiable, 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-//        setupBehaviours()
         bind(to: viewModel)
         viewModel.viewDidLoad()
     }
@@ -58,13 +57,9 @@ final class MoviesListViewController: UIViewController, StoryboardInstantiable, 
     private func setupViews() {
         title = viewModel.screenTitle
         emptyDataLabel.text = viewModel.emptyDataTitle
+        emptyDataLabel.accessibilityIdentifier = AccessibilityIdentifier.noMovieLabel
         setupSearchController()
     }
-
-//    private func setupBehaviours() {
-//        addBehaviors([BackButtonEmptyTitleNavigationBarBehavior(),
-//                      BlackStyleNavigationBarBehavior()])
-//    }
 
     private func updateItems() {
         moviesTableViewController?.reload()
