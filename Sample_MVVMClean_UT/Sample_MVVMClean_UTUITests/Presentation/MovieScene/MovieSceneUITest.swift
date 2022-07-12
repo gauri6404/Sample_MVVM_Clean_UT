@@ -9,7 +9,7 @@ class MoviesSceneUITests: XCTestCase {
     }
 
     
-    func testScreenUI() {
+    func testMovieList_whenSearchBatman_thenMovieTableViewExist() {
         let app = XCUIApplication()
         
         // Search field exist
@@ -30,5 +30,21 @@ class MoviesSceneUITests: XCTestCase {
         
         // Table view exist
         XCTAssertTrue(app.tables[AccessibilityIdentifier.tableView].waitForExistence(timeout: 5))
+    }
+    
+    func testAlert_whenSearchUnusal_thenAlertExist() {
+        let app = XCUIApplication()
+        
+        // Search for non-exist movie related text
+        let searchText = "hegfuwehfbjsbdwu"
+        app.searchFields[AccessibilityIdentifier.searchField].tap()
+        if !app.keys["A"].waitForExistence(timeout: 5) {
+            XCTFail("The keyboard could not be found. Use keyboard shortcut COMMAND + SHIFT + K while simulator has focus on text input")
+        }
+        _ = app.searchFields[AccessibilityIdentifier.searchField].waitForExistence(timeout: 10)
+        app.searchFields[AccessibilityIdentifier.searchField].typeText(searchText)
+        app.buttons["search"].tap()
+
+        XCTAssertTrue(app.alerts["Error"].waitForExistence(timeout: 5))
     }
 }

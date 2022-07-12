@@ -25,7 +25,7 @@ class SearchMoviesUseCaseTests: XCTestCase {
 
     func testSearchMoviesUseCaseRequestValue() {
         // given
-        let expectation = self.expectation(description: "Recent query saved")
+        let expectation = self.expectation(description: "Recent query returns movies")
         let useCase = DefaultSearchMoviesUseCase(moviesRepository: MoviesRepositoryMock(result: .success(SearchMoviesUseCaseTests.moviesPages[0])))
 
         // when

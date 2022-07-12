@@ -67,6 +67,9 @@ final class DefaultMoviesListViewModel: MoviesListViewModel {
             + [moviesPage]
 
         items.value = pages.movies.map(MoviesListItemViewModel.init)
+        if items.value.isEmpty {
+            self.handle(error: DataTransferError.noResponse)
+        }
     }
 
     private func resetPages() {

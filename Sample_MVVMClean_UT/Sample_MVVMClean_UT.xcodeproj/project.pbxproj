@@ -73,6 +73,7 @@
 		95DB4BBB287C8D9800120B4E /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB4B68287C35B200120B4E /* AccessibilityIdentifier.swift */; };
 		95DB4BC0287D54B100120B4E /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB4B46287C2DF700120B4E /* Alertable.swift */; };
 		95DB4BC1287D550800120B4E /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB4B46287C2DF700120B4E /* Alertable.swift */; };
+		95DB4BC7287D836900120B4E /* DataTransferErrorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB4BC6287D836900120B4E /* DataTransferErrorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +147,7 @@
 		95DB4BAA287C8CAB00120B4E /* Sample_MVVMClean_UTUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Sample_MVVMClean_UTUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95DB4BB8287C8D0B00120B4E /* MovieSceneUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSceneUITest.swift; sourceTree = "<group>"; };
 		95DB4BBC287C8E7600120B4E /* Sample_MVVMClean_UTUITests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sample_MVVMClean_UTUITests-Bridging-Header.h"; sourceTree = "<group>"; };
+		95DB4BC6287D836900120B4E /* DataTransferErrorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferErrorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -348,6 +350,7 @@
 		95DB4B42287C2CFD00120B4E /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				95DB4BC5287D835400120B4E /* Extension */,
 				95DB4B45287C2DEA00120B4E /* Protocol */,
 				95DB4B43287C2D1200120B4E /* Observable.swift */,
 				95DB4B66287C356200120B4E /* LoadingView.swift */,
@@ -506,7 +509,6 @@
 		95DB4BB5287C8CC300120B4E /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				95DB4BBD287D540400120B4E /* Alertable */,
 				95DB4BB6287C8CD100120B4E /* MovieScene */,
 			);
 			path = Presentation;
@@ -521,11 +523,12 @@
 			path = MovieScene;
 			sourceTree = "<group>";
 		};
-		95DB4BBD287D540400120B4E /* Alertable */ = {
+		95DB4BC5287D835400120B4E /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				95DB4BC6287D836900120B4E /* DataTransferErrorExtension.swift */,
 			);
-			path = Alertable;
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -667,6 +670,7 @@
 				95DB4B04287AF8F300120B4E /* DataTransferService.swift in Sources */,
 				95DB4B73287C3B6500120B4E /* AppConfiguration.swift in Sources */,
 				95DB4B0E287C04AB00120B4E /* MoviesRequestDTO.swift in Sources */,
+				95DB4BC7287D836900120B4E /* DataTransferErrorExtension.swift in Sources */,
 				95DB4B5E287C324900120B4E /* MovieListTableViewController.swift in Sources */,
 				95DB4AF9287ABE8B00120B4E /* Cancelable.swift in Sources */,
 				95DB4B24287C132700120B4E /* RepositoryTask.swift in Sources */,
