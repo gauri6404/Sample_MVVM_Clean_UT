@@ -198,13 +198,10 @@
 		95D7E04F287AB68E00D965D6 /* Sample_MVVMClean_UT */ = {
 			isa = PBXGroup;
 			children = (
-				95D7E080287AB71D00D965D6 /* AppConfiguration */,
-				95DB4B6D287C3A2F00120B4E /* DIContainer */,
+				95D7E080287AB71D00D965D6 /* Application */,
 				95DB4B40287C2C5500120B4E /* Presentation */,
-				95DB4B30287C22EE00120B4E /* UseCases */,
-				95DB4B0F287C09D800120B4E /* Repositories */,
-				95DB4B16287C0A7300120B4E /* Entities */,
-				95DB4B0A287C045D00120B4E /* Network */,
+				95DB4BCE287D986E00120B4E /* Domain */,
+				95DB4BCF287D98DB00120B4E /* Data */,
 				95DB4AFC287ABEF100120B4E /* NetworkManagement */,
 				95DB4AF7287ABE4E00120B4E /* CommonFiles */,
 				95D7E081287AB75200D965D6 /* Resources */,
@@ -223,15 +220,16 @@
 			path = Sample_MVVMClean_UTTests;
 			sourceTree = "<group>";
 		};
-		95D7E080287AB71D00D965D6 /* AppConfiguration */ = {
+		95D7E080287AB71D00D965D6 /* Application */ = {
 			isa = PBXGroup;
 			children = (
 				95DB4B72287C3B6500120B4E /* AppConfiguration.swift */,
 				95DB4B74287C3BB500120B4E /* AppFlowCoordinator.swift */,
 				95D7E050287AB68E00D965D6 /* AppDelegate.swift */,
 				95D7E052287AB68E00D965D6 /* SceneDelegate.swift */,
+				95DB4B6D287C3A2F00120B4E /* DIContainer */,
 			);
-			path = AppConfiguration;
+			path = Application;
 			sourceTree = "<group>";
 		};
 		95D7E081287AB75200D965D6 /* Resources */ = {
@@ -268,19 +266,19 @@
 		95DB4B0A287C045D00120B4E /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				95DB4BD1287D997B00120B4E /* Datamapping */,
 				95DB4B0B287C046D00120B4E /* APIEndPoints.swift */,
-				95DB4B0D287C04AB00120B4E /* MoviesRequestDTO.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
 		};
-		95DB4B0F287C09D800120B4E /* Repositories */ = {
+		95DB4B0F287C09D800120B4E /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
-				95DB4B1B287C0B5700120B4E /* Interfaces */,
-				95DB4B1C287C0B6D00120B4E /* Implementations */,
+				95DB4B10287C09F000120B4E /* MoviesRepository.swift */,
+				95DB4B14287C0A3A00120B4E /* PosterImagesRepository.swift */,
 			);
-			path = Repositories;
+			path = Interfaces;
 			sourceTree = "<group>";
 		};
 		95DB4B16287C0A7300120B4E /* Entities */ = {
@@ -293,23 +291,14 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
-		95DB4B1B287C0B5700120B4E /* Interfaces */ = {
+		95DB4B1C287C0B6D00120B4E /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				95DB4B10287C09F000120B4E /* MoviesRepository.swift */,
-				95DB4B14287C0A3A00120B4E /* PosterImagesRepository.swift */,
-			);
-			path = Interfaces;
-			sourceTree = "<group>";
-		};
-		95DB4B1C287C0B6D00120B4E /* Implementations */ = {
-			isa = PBXGroup;
-			children = (
-				95DB4B23287C132700120B4E /* RepositoryTask.swift */,
+				95DB4BD0287D990900120B4E /* Utils */,
 				95DB4B1D287C0D2800120B4E /* DefaultMovieRepository.swift */,
 				95DB4B25287C13FE00120B4E /* DefaultPosterImageRepository.swift */,
 			);
-			path = Implementations;
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 		95DB4B30287C22EE00120B4E /* UseCases */ = {
@@ -340,8 +329,7 @@
 		95DB4B40287C2C5500120B4E /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				95DB4B76287C3C7A00120B4E /* Flow */,
-				95DB4B4A287C2EC400120B4E /* MovieList */,
+				95DB4BCD287D981300120B4E /* MovieScene */,
 				95DB4B42287C2CFD00120B4E /* Utility */,
 			);
 			path = Presentation;
@@ -389,7 +377,6 @@
 		95DB4B5B287C31FF00120B4E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				95DB4B5F287C327000120B4E /* Cell */,
 				95DB4B5C287C322400120B4E /* MovieListTableView */,
 				95DB4B62287C32AF00120B4E /* MovieListViewController.swift */,
 				95DB4B64287C32C300120B4E /* MoviesListViewController.storyboard */,
@@ -400,6 +387,7 @@
 		95DB4B5C287C322400120B4E /* MovieListTableView */ = {
 			isa = PBXGroup;
 			children = (
+				95DB4B5F287C327000120B4E /* Cell */,
 				95DB4B5D287C324900120B4E /* MovieListTableViewController.swift */,
 			);
 			path = MovieListTableView;
@@ -529,6 +517,50 @@
 				95DB4BC6287D836900120B4E /* DataTransferErrorExtension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		95DB4BCD287D981300120B4E /* MovieScene */ = {
+			isa = PBXGroup;
+			children = (
+				95DB4B76287C3C7A00120B4E /* Flow */,
+				95DB4B4A287C2EC400120B4E /* MovieList */,
+			);
+			path = MovieScene;
+			sourceTree = "<group>";
+		};
+		95DB4BCE287D986E00120B4E /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				95DB4B30287C22EE00120B4E /* UseCases */,
+				95DB4B0F287C09D800120B4E /* Interfaces */,
+				95DB4B16287C0A7300120B4E /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		95DB4BCF287D98DB00120B4E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				95DB4B0A287C045D00120B4E /* Network */,
+				95DB4B1C287C0B6D00120B4E /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		95DB4BD0287D990900120B4E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				95DB4B23287C132700120B4E /* RepositoryTask.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		95DB4BD1287D997B00120B4E /* Datamapping */ = {
+			isa = PBXGroup;
+			children = (
+				95DB4B0D287C04AB00120B4E /* MoviesRequestDTO.swift */,
+			);
+			path = Datamapping;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
