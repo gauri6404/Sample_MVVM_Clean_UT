@@ -33,6 +33,9 @@
 
 * UI/ Unit Testing with more the 80% coverage
 * Scheme Configuration - Development
+* Dependency Injection using constructor dependencies
+* Protocol oriented programming
+
 
 
 ## Who do I talk to? ##
