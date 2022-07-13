@@ -28,6 +28,7 @@ final class MoviesListViewController: UIViewController, StoryboardInstantiable, 
         setupViews()
         bind(to: viewModel)
         viewModel.viewDidLoad()
+        contentView.backgroundColor = UIColor(red: 48/255.0, green: 176/255.0, blue: 199/255.0, alpha: 1.0)
     }
 
     private func bind(to viewModel: MoviesListViewModel) {

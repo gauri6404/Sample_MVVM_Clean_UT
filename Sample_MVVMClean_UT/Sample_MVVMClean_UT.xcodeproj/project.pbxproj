@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		95D7E051287AB68E00D965D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D7E050287AB68E00D965D6 /* AppDelegate.swift */; };
-		95D7E053287AB68E00D965D6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D7E052287AB68E00D965D6 /* SceneDelegate.swift */; };
 		95D7E05A287AB69000D965D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95D7E059287AB69000D965D6 /* Assets.xcassets */; };
 		95D7E05D287AB69000D965D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D7E05B287AB69000D965D6 /* LaunchScreen.storyboard */; };
 		95DB4AF9287ABE8B00120B4E /* Cancelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DB4AF8287ABE8B00120B4E /* Cancelable.swift */; };
@@ -96,7 +95,6 @@
 /* Begin PBXFileReference section */
 		95D7E04D287AB68E00D965D6 /* Sample_MVVMClean_UT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample_MVVMClean_UT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95D7E050287AB68E00D965D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		95D7E052287AB68E00D965D6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		95D7E059287AB69000D965D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95D7E05C287AB69000D965D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95D7E05E287AB69000D965D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -227,7 +225,6 @@
 				95DB4B72287C3B6500120B4E /* AppConfiguration.swift */,
 				95DB4B74287C3BB500120B4E /* AppFlowCoordinator.swift */,
 				95D7E050287AB68E00D965D6 /* AppDelegate.swift */,
-				95D7E052287AB68E00D965D6 /* SceneDelegate.swift */,
 				95DB4B6D287C3A2F00120B4E /* DIContainer */,
 				95DB4BE4287EED3F00120B4E /* Developer.xcconfig */,
 			);
@@ -728,7 +725,6 @@
 				95DB4B47287C2DF700120B4E /* Alertable.swift in Sources */,
 				95DB4B44287C2D1200120B4E /* Observable.swift in Sources */,
 				95DB4B71287C3B2E00120B4E /* AppDIContainer.swift in Sources */,
-				95D7E053287AB68E00D965D6 /* SceneDelegate.swift in Sources */,
 				95DB4B4F287C2F2700120B4E /* MovieListViewModel.swift in Sources */,
 				95DB4B67287C356200120B4E /* LoadingView.swift in Sources */,
 				95DB4B69287C35B200120B4E /* AccessibilityIdentifier.swift in Sources */,
@@ -931,7 +927,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -958,7 +954,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1132,7 +1128,7 @@
 			baseConfigurationReference = 95DB4BE4287EED3F00120B4E /* Developer.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
